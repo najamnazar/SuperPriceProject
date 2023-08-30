@@ -1,0 +1,7 @@
+com\superprice\exception\ResourceNotFoundException.class
+com\superprice\config\WebConfig.class
+com\superprice\controller\ProductController.class
+com\superprice\service\ProductService.class
+com\superprice\model\Product.class
+com\superprice\repository\ProductRepository.class
+com\superprice\SuperPriceApplication.class
