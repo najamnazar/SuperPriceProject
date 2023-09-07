@@ -8,62 +8,63 @@ BASE_URL = "http://localhost:8000/api"
 
 @app.route('/')
 def index():
-    products = requests.get(f"{BASE_URL}/products").json()
-    return render_template('index.html', products=products)
+    books = requests.get(f"{BASE_URL}/books").json()
+    print(books)
+    return render_template('index.html', books=books)
 
-@app.route('/update-product/<int:product_id>', methods=['GET', 'POST'])
-def update_product(product_id):
+@app.route('/update-book/<int:book_id>', methods=['GET', 'POST'])
+def update_book(book_id):
     if request.method == 'POST':
-        product_name = request.form['product_name']
-        product_price = request.form['product_price']
+        book_name = request.form['book_name']
+        book_price = request.form['book_price']
 
         payload = {
-            'name': product_name,
-            'price': float(product_price)
+            'name': book_name,
+            'price': float(book_price)
         }
 
-        response = requests.put(f"{BASE_URL}/products/{product_id}", json=payload)
+        response = requests.put(f"{BASE_URL}/books/{book_id}", json=payload)
         
         if response.status_code == 200:
             flash('Product updated successfully!', 'success')
         else:
-            flash('Failed to update product.', 'danger')
+            flash('Failed to update book.', 'danger')
 
         return redirect(url_for('index'))
 
-    # GET request handling, possibly fetching the current product data and showing in a form.
-    product = requests.get(f"{BASE_URL}/products/{product_id}").json()
-    return render_template('update_product.html', product=product)
+    # GET request handling, possibly fetching the current book data and showing in a form.
+    book = requests.get(f"{BASE_URL}/books/{book_id}").json()
+    return render_template('update_book.html', book=book)
 
-@app.route('/delete-product/<int:product_id>', methods=['POST'])
-def delete_product(product_id):
-    response = requests.delete(f"{BASE_URL}/products/{product_id}")
+@app.route('/delete-book/<int:book_id>', methods=['POST'])
+def delete_book(book_id):
+    response = requests.delete(f"{BASE_URL}/books/{book_id}")
 
     if response.status_code == 200:
         flash('Product deleted successfully!', 'success')
     else:
-        flash('Failed to delete product.', 'danger')
+        flash('Failed to delete book.', 'danger')
 
     return redirect(url_for('index'))
 
 
 
-@app.route('/add-product', methods=['POST'])
-def add_product():
-    product_name = request.form['product_name']
-    product_price = request.form['product_price']
+@app.route('/add-book', methods=['POST'])
+def add_book():
+    book_name = request.form['book_name']
+    book_price = request.form['book_price']
 
     payload = {
-        'name': product_name,
-        'price': float(product_price)
+        'name': book_name,
+        'price': float(book_price)
     }
 
-    response = requests.post(f"{BASE_URL}/products", json=payload)
+    response = requests.post(f"{BASE_URL}/books", json=payload)
     
     if response.status_code == 201:
         flash('Product added successfully!', 'success')
     else:
-        flash('Failed to add product.', 'danger')
+        flash('Failed to add book.', 'danger')
 
     return redirect(url_for('index'))
 
