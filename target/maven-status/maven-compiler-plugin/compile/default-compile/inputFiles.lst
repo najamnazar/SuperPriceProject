@@ -1,7 +1,7 @@
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\repository\ProductRepository.java
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\service\ProductService.java
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\SuperPriceApplication.java
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\model\Product.java
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\exception\ResourceNotFoundException.java
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\controller\ProductController.java
-D:\Teaching\RMIT\SuperPriceProject\src\main\java\com\superprice\config\WebConfig.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/controller/BookController.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/repository/BookRepository.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/service/BookService.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/config/WebConfig.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/SuperPriceApplication.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/exception/ResourceNotFoundException.java
+/Users/thanhdatn/Marc/SuperPriceProject/src/main/java/com/superprice/model/Book.java
