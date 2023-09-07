@@ -38,4 +38,14 @@ public class BookController {
 	public Book updateBook(@PathVariable Long id, @RequestBody Book BookDetails) {
 		return BookService.updateBook(id, BookDetails);
 	}
+
+	@GetMapping("/search/name")
+    public List<Book> searchByName(@RequestParam String name) {
+        return productService.searchByName(name);
+    }
+
+    @GetMapping("/search/price")
+    public List<Book> searchByPriceRange(@RequestParam Double minPrice, @RequestParam Double maxPrice) {
+        return productService.searchByPriceRange(minPrice, maxPrice);
+    }
 }

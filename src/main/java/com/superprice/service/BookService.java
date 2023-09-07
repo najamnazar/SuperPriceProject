@@ -37,4 +37,12 @@ public class BookService {
 		Book.setPrice(BookDetails.getPrice());
 		return BookRepository.save(Book);
 	}
+
+	public List<Book> searchByName(String name) {
+        return productRepository.findByNameContainingIgnoreCase(name);
+    }
+
+    public List<Book> searchByPriceRange(Double minPrice, Double maxPrice) {
+        return productRepository.findByPriceBetween(minPrice, maxPrice);
+    }
 }
