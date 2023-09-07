@@ -41,11 +41,11 @@ public class BookController {
 
 	@GetMapping("/search/name")
     public List<Book> searchByName(@RequestParam String name) {
-        return productService.searchByName(name);
+        return BookService.searchByName(name);
     }
 
     @GetMapping("/search/price")
     public List<Book> searchByPriceRange(@RequestParam Double minPrice, @RequestParam Double maxPrice) {
-        return productService.searchByPriceRange(minPrice, maxPrice);
+        return BookService.searchByPriceRange(minPrice, maxPrice);
     }
 }

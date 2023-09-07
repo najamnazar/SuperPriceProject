@@ -39,10 +39,10 @@ public class BookService {
 	}
 
 	public List<Book> searchByName(String name) {
-        return productRepository.findByNameContainingIgnoreCase(name);
+        return BookRepository.findByNameContainingIgnoreCase(name);
     }
 
     public List<Book> searchByPriceRange(Double minPrice, Double maxPrice) {
-        return productRepository.findByPriceBetween(minPrice, maxPrice);
+        return BookRepository.findByPriceBetween(minPrice, maxPrice);
     }
 }
